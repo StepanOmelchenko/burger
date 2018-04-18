@@ -1,0 +1,14 @@
+.seventh{
+    background-image: url("../img/bg/seventh-bg.jpg");
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.seventh__header{
+    color: $yellow;
+
+        @include phones-height{
+            font-size: rem(24px);
+        }
+}

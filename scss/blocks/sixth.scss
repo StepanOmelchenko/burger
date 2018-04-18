@@ -1,0 +1,115 @@
+.sixth__list{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sixth__item{
+    width: 25%;
+    height: 50%;
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    filter: grayscale(100%);
+
+        &:before{
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, .5);
+            opacity: 0;
+            transition: opacity .3s;            
+        }
+
+        &:hover:before{
+            opacity: 1;
+        }
+
+        &:hover .sixth__inner{
+            opacity: 1;
+        }
+
+        @include tablets{
+            width: 50%;
+            height: 25%;
+        }
+
+}
+
+@each $photo in (client1, client2, client3, client4, client5, client6, client7, client8) { 
+
+    .sixth__item--#{$photo}{
+        background-image: url("../img/content/clients/#{$photo}.jpg");
+    }
+
+}
+
+.sixth__inner{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    width: 90%;
+    height: 90%;
+    transition: opacity .3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+
+        @include tablets{
+            width: 100%;
+            height: 100%;
+            align-items: center;
+        }
+}
+
+.sixth__inner-title{
+    font-family: "gagalinregular", Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 14px;
+
+        @include phones{
+            text-align: center;
+            font-size: 24px;
+        }
+
+}
+
+.sixth__inner-text{
+    line-height: rem(24px);
+
+        @include tablets{
+            text-align: center;
+            line-height: initial;
+        }
+
+        @include phones{
+            display: none;
+        }
+
+}
+
+.sixth__inner-link{
+    text-align: center;
+    padding: rem(10px);
+    font-family: "ubuntumedium", Arial, Helvetica, sans-serif;
+    font-size: rem(13px);
+    text-transform: uppercase;
+    background-color: $black;
+    display: inline-block;
+    border-radius: 5%;
+
+    &:hover{
+        background-color: $black-hover;
+    }
+}

@@ -1,0 +1,79 @@
+.footer{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: rem(10px) 0;
+    background-image: url("../img/bg/footer.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.footer__inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+        @include phones{
+            flex-direction: column;
+        }
+
+}
+
+.footer__info{
+
+    @include phones{
+        text-align: center;
+    }
+
+
+}
+
+.footer__phone{
+    margin-top: rem(10px);
+    font-family: "ubuntubold", Arial, Helvetica, sans-serif;
+    color: $orange;
+}
+
+.footer__phone-icon{
+    display: inline-block;
+    width: rem(12px);
+    height: rem(11px);
+}
+
+.footer__phone-number{
+    display: inline-block;
+    margin-left: rem(5px);
+}
+
+.footer__list{
+    display: flex;
+    align-items: center;
+
+        @include phones{
+            margin-top: rem(15px);
+        }
+
+}
+
+.footer__item{
+    margin-left: rem(20px);
+    display: flex;
+    align-items: center;
+
+        &:first-child{
+            margin-left: 0;
+        }
+
+}
+
+.footer__svg{
+    fill: $white;
+    opacity: .3;
+    transition: opacity .3s;
+
+        &:hover{
+            opacity: 1;
+        }
+}

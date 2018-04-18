@@ -1,0 +1,108 @@
+.second{
+    background-image: url("../img/bg/second-bg.jpg");
+    display: flex;
+    align-items: center;
+}
+
+.second__box{
+    padding-bottom: rem(35px);
+    padding-left: rem(20px);
+    width: 100%;
+
+        @include tablets{
+            padding-bottom: 0;
+            padding-left: 0;
+        }
+
+}
+
+.second__header{
+    color: $black;
+    text-align: center;
+}
+
+.second__list{
+    margin-top: rem(35px);
+    padding: 0 rem(12px);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+        @include phones{
+            margin-top: rem(10px);
+            padding: 0;
+            flex-direction: column;
+        }
+
+        @include phones-less{
+            margin-top: 0;
+        }
+
+}
+
+.second__item{
+    width: 30%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+
+        @include phones{
+            width: 100%;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+}
+
+.second__img{
+    width: rem(100px);
+    height: rem(100px);
+    margin: 0 auto;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@each $img in (meat, hand, natural) {
+
+    .second__img--#{$img}{
+        background-image: url("../img/content/#{$img}.png")
+    }
+
+}
+
+.second__info{
+    @include phones{
+        text-align: left;
+        max-width: 60%;
+    }
+}
+
+.second__title{
+    color: $black;
+    font-family: "lifehackmedium", Arial, Helvetica, sans-serif;
+    font-size: rem(24px);
+    margin-top: rem(30px);
+    letter-spacing: rem(-0.6px);
+
+        @include phones-less{
+            margin-top: 0;
+            font-size: rem(16px);
+        }
+}
+
+.second__text{
+    text-align: justify;
+    margin-top: rem(10px);
+    color: $black;
+    line-height: rem(24px);
+
+        @include tablets{
+            text-align: center;
+        }
+
+        @include phones{
+            text-align: left;
+        }
+
+}

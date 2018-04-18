@@ -1,0 +1,93 @@
+.header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-right: rem(7px);
+    padding-left: rem(19px);
+
+        @include tablets{
+            padding-right: 0;
+            padding-left: rem(10px);
+        }
+
+        @include phones-less{
+            padding-left: 0;
+        }
+
+
+
+    &__logo{
+        width: rem(92px);
+        height: rem(69px);
+        margin-right: auto;
+        transition: transform .2s;
+
+            &-svg{              // const
+                width: 92px;    
+                height: 69px;
+            }
+
+            &:hover{
+                transform: scale(1.1);
+            }
+    }
+
+    &-menu__list{
+        font-family: "ubuntumedium", Arial, Helvetica, sans-serif;
+        font-size: rem(13px);
+        text-transform: uppercase;
+
+        @include tablets {
+            display: none;
+        }
+    }
+
+    &-menu__item{
+        display: inline-block;
+
+            &:before{
+                content: "";
+                display: inline-block;
+                margin-right: rem(11px);
+                margin-left: rem(12px);
+                background-color: $white;
+                width: rem(5px);
+                height: rem(5px);
+                border-radius: 50%;
+                vertical-align: middle;
+            }
+
+            &:first-child:before{
+                display: none;
+            }
+    }
+
+    &-menu__link{
+        vertical-align: middle;
+
+            &:hover{
+                text-decoration: underline;
+            }
+    }
+
+    &__btn{
+        display: inline-block;
+        margin-left: rem(19px);
+    }
+
+    &__hamburger{
+        display: none;
+        margin-left: rem(25px);
+        width: rem(24px);
+        height: rem(24px);
+
+            @include tablets{
+                display: inline-block;
+            }
+
+            @include phones-less{
+                margin-left: rem(10px);
+            }
+    }
+
+}

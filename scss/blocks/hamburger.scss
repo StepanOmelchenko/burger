@@ -1,0 +1,31 @@
+.hamburger__btn{
+    position: relative;
+    width: rem(24px);
+    height: rem(4px);
+    border-radius: 20%;
+    background-color: $white;
+
+        &:before{
+            content: "";
+            display: block;
+            position: absolute;
+            width: rem(24px);
+            height: rem(4px);
+            left: 0;
+            top: rem(8px);
+            border-radius: 20%;
+            background-color: $white;
+        }
+
+        &:after{
+            content: "";
+            display: block;
+            position: absolute;
+            width: rem(24px);
+            height: rem(4px);
+            left: 0;
+            top: rem(16px);
+            border-radius: 20%;
+            background-color: $white;
+        }
+}

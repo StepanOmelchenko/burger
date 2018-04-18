@@ -1,0 +1,12 @@
+.order-modal__box{
+    border-radius: rem(10px);
+    background-color: $white;
+    padding: rem(20px);
+    width: rem(200px);
+    text-align: center;
+}
+
+.order-modal__text{
+    @extend .sixth__inner-text;
+    color: $black;
+}

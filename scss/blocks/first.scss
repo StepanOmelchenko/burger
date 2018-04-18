@@ -1,0 +1,122 @@
+.first{
+    background-image: url("../img/bg/first-texture.png"), url("../img/bg/first-bg.jpg");
+    padding-top: rem(12px);
+}
+
+.first__inner{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.first-box{
+    flex: 1;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: rem(30px);
+    padding-left: rem(20px);
+    overflow: hidden;
+
+    @include horizontal{
+        padding-left: 0;
+    }
+
+    @include tablets {
+        flex-direction: column;
+        padding-bottom: 0;
+    }
+}
+
+.first-box__img{
+    width: 50%;
+    height: 100%;
+    max-height: rem(424px);
+    background-image: url("../img/content/first-burger.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    
+        @include tablets{
+            width: 100%;
+        }
+
+        @include phones-height{
+            display: none;
+        }
+
+}
+
+.first-box__header{
+    width: 50%;
+    padding-top: rem(80px);
+
+    @include tablets{
+        width: 100%;
+        text-align: center;
+        padding-top: 0;
+        margin-top: rem(20px);
+        max-width: rem(480px);
+    }
+
+    @include phones{
+        font-size: rem(63px);
+        margin-top: rem(30px);
+    }
+}
+
+.first-box__title-up{
+    color: $yellow;
+    display: inline-block;
+
+        @include phones{
+            font-size: rem(63px);
+        }
+}
+
+.first-box__title-down{
+    font-family: "lifehackmedium", Arial, Helvetica, sans-serif;
+    font-size: rem(65px);
+    text-transform: lowercase;
+    margin-top: rem(17px);
+    line-height: 1;
+    letter-spacing: rem(-1.63px);
+    color: $white;
+    display: inline-block;
+
+        @include tablets{
+            margin-top: 0;
+        }
+
+        @include phones{
+            font-size: rem(54px);
+        }
+
+        @include phones-less{
+            font-size: rem(38px);
+        }
+}
+
+.first__bottom{
+    flex-basis: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.first__arrow{
+    transition: transform .2s;
+    padding-top: rem(10px);
+
+        &-svg{                //const
+            width: 29px;
+            height: 14px;
+        }
+
+        &:hover{
+            transform: scale(1.3);
+        }
+}

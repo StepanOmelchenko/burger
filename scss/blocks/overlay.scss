@@ -1,0 +1,121 @@
+.overlay{
+    position: fixed;
+    display: none;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba($black, .9);
+    color: $white;
+
+        &__header{
+            width: 100%;
+            padding: rem(5px) rem(20px) 0 rem(20px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &--reviews{
+                padding: 0;
+            }
+
+        }
+
+        &__list{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+            font-size: rem(24px);
+            font-family: "ubuntumedium", Arial, Helvetica, sans-serif;
+            text-transform: uppercase;
+        }
+
+        &__item{
+            display: block;
+            position: relative;
+            text-align: center;
+
+                &:after{
+                    content: "";
+                    display: block;
+                    margin: rem(25px) auto;
+                    width: rem(5px);
+                    height: rem(5px);
+                    border-radius: 50%;
+                    background-color: $white;
+                }
+
+                &:last-child:after{
+                    display: none;
+                }
+
+        }
+
+        &__link:hover{
+            color: $orange;
+        }
+
+        &__close-btn{
+            @extend .close-btn;
+
+            &:before,
+            &:after{
+                background-color: $orange;
+            }
+
+        }
+
+        &__box{
+            width: rem(463px);
+            border-radius: rem(10px);
+            background-color: $white;
+            padding: rem(20px);
+
+            @include phones{
+                width: 90%;
+            }
+
+        }
+
+        &__title{
+            @extend .sixth__inner-title;
+
+            @include phones{
+                font-size: rem(14px);
+            }
+
+        }
+
+        &__text{
+            @extend .sixth__inner-text;
+
+            margin-top: rem(30px);
+
+                @include tablets{
+                    text-align: left;
+                    line-height: rem(24px);
+                }
+
+                @include phones{
+                    margin-top: 0;
+                    display: block;
+                }
+
+        }
+
+        &__text,
+        &__title{
+            color: $black;
+        }
+
+        &--rewievs{
+            display: flex;
+        }
+
+}

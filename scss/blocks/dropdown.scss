@@ -1,0 +1,39 @@
+.dropdown{
+    z-index: 10;
+
+    @include tablets{
+        display: flex;
+        justify-content: space-between;
+    }
+
+     &__table{
+        width: rem(270px);
+        height: rem(330px);
+ 
+            @include phones-less{
+                width: rem(200px);
+            }
+
+    }
+
+    &__tbody{
+        vertical-align: center;
+    }
+
+    &__td{
+
+        &-img{
+            text-align: center;
+        }
+
+        &-title{
+            font-family: "ubuntumedium", Arial, Helvetica, sans-serif;
+        }
+
+        &-weight{
+            text-align: right;
+        }
+        
+    }
+
+}
