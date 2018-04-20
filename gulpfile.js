@@ -2,6 +2,7 @@ const gulp = require('gulp');
 const del = require('del');
 const uglify = require('gulp-uglify');
 const sass = require('gulp-sass');
+const babel = require('gulp-babel');
 const removeHtmlComments = require('gulp-remove-html-comments');
 const minHtml = require('gulp-htmlmin');
 
@@ -55,7 +56,10 @@ function styles() {
 
 function script() {
     return gulp.src(paths.script.src)
-        /* .pipe(uglify()) */
+        .pipe(babel({
+            presets: ['env']
+        }))
+        .pipe(uglify())
         .pipe(gulp.dest(paths.script.dest))
 }
 

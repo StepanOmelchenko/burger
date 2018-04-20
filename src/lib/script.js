@@ -125,7 +125,7 @@ window.addEventListener('resize', () => {
     }, 1000);
 });
 
-delayFunc = (function(){
+var delayFunc = (function(){
   var timer = 0;
   return function(callback, ms) {
     clearTimeout(timer);
@@ -360,7 +360,7 @@ function init(){
 // form sender
 
 var orderForm = document.querySelector('#order-form');
-    orderOverlay = document.createElement('div');
+var orderOverlay = document.createElement('div');
     orderOverlay.innerHTML = document.querySelector('#order-overlay').innerHTML;
     orderOverlay.classList.add('overlay');
     orderOverlay.classList.add('overlay--rewievs');
