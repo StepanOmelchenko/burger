@@ -13,9 +13,8 @@
 
 .first-box{
     flex: 1;
-    max-width: 100%;
+    width: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
     padding-bottom: rem(30px);
     padding-left: rem(20px);
@@ -34,7 +33,7 @@
 .first-box__img{
     width: 50%;
     height: 100%;
-    max-height: rem(424px);
+    min-height: rem(424px);
     background-image: url("../img/content/first-burger.png");
     background-position: center;
     background-repeat: no-repeat;
@@ -43,11 +42,6 @@
         @include tablets{
             width: 100%;
         }
-
-        @include phones-height{
-            display: none;
-        }
-
 }
 
 .first-box__header{

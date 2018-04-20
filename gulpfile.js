@@ -15,7 +15,8 @@ const paths = {
         src: './src/server.php'
     },
     scss: {
-        src: './src/scss/main.scss',
+        src: './src/scss/**/*.scss',
+        main: './src/scss/main.scss',
         dest: './build/styles'
     },
     script: {
@@ -49,7 +50,7 @@ function php() {
 }
 
 function styles() {
-    return gulp.src(paths.scss.src)
+    return gulp.src(paths.scss.main)
         .pipe(sass({ outputStyle: 'compressed' }))
         .pipe(gulp.dest(paths.scss.dest))
 }
