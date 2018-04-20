@@ -33,7 +33,7 @@
 .first-box__img{
     width: 50%;
     height: 100%;
-    min-height: rem(424px);
+    max-height: rem(424px);
     background-image: url("../img/content/first-burger.png");
     background-position: center;
     background-repeat: no-repeat;
@@ -68,6 +68,10 @@
 
         @include phones{
             font-size: rem(63px);
+        }
+
+        @include phones-less{
+            font-size: rem(40px);
         }
 }
 
