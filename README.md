@@ -2,4 +2,4 @@
 
 1. npm i
 2. gulp
-3. run live server on build folder
+3. run live server

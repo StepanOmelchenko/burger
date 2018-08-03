@@ -12,21 +12,17 @@
 }
 
 .first-box{
-    flex: 1;
+    flex: .8;
     width: 100%;
     display: flex;
     align-items: center;
-    padding-bottom: rem(30px);
-    padding-left: rem(20px);
     overflow: hidden;
 
     @include horizontal{
-        padding-left: 0;
     }
 
     @include tablets {
         flex-direction: column;
-        padding-bottom: 0;
     }
 }
 
@@ -34,14 +30,23 @@
     width: 50%;
     height: 100%;
     max-height: rem(424px);
+    margin-left: rem(20px);
     background-image: url("../img/content/first-burger.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    
+
+        @include horizontal{
+            margin-left: 0;
+        }
+
         @include tablets{
             width: 100%;
         }
+}
+
+.first-box__fakeimg{
+    display: none;
 }
 
 .first-box__header{
