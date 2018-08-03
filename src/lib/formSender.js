@@ -1,11 +1,25 @@
 // form sender
+const formSectionOne = document.querySelector('#form-sectionone');
+const formTextarea = document.querySelector('#form-textarea');
+const orderForm = document.querySelector('#order-form');
 
-var orderForm = document.querySelector('#order-form');
 var orderOverlay = document.createElement('div');
     orderOverlay.innerHTML = document.querySelector('#order-overlay').innerHTML;
     orderOverlay.classList.add('overlay');
     orderOverlay.classList.add('overlay--rewievs');
 var orderCloseBtn = orderOverlay.querySelector('#order-close-btn');
+
+formTextarea.addEventListener('focus', (e) => {
+  let orderFormParams = orderForm.getBoundingClientRect();
+
+  if (orderFormParams.width <= 480) {
+    formSectionOne.classList.add('form__column--hide');
+  }
+});
+
+formTextarea.addEventListener('focusout', (e) => {
+  formSectionOne.classList.remove('form__column--hide');
+});
 
 orderCloseBtn.addEventListener('click', (e) => {
   e.preventDefault();
@@ -58,3 +72,4 @@ function createOrderModalWindow(parent, child, text) {
   child.querySelector('.order-modal__text').innerText = text;
   parent.appendChild(child);
 }
+

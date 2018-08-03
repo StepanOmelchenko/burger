@@ -13,7 +13,6 @@
         @include phones-height{
             margin-top: 0;
         }
-
 }
 
 .form__column{
@@ -24,6 +23,10 @@
 
         &:last-child{
             margin-right: 0;
+        }
+
+        &--hide{
+            display: none;
         }
 
         @include tablets{
