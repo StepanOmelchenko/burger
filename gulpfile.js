@@ -5,6 +5,7 @@ const sass = require('gulp-sass');
 const babel = require('gulp-babel');
 const removeHtmlComments = require('gulp-remove-html-comments');
 const minHtml = require('gulp-htmlmin');
+const concat = require('gulp-concat');
 
 const paths = {
     root: './build',
@@ -20,7 +21,7 @@ const paths = {
         dest: './build/styles'
     },
     script: {
-        src: './src/lib/script.js',
+        src: './src/lib/*.js',
         dest: './build/lib'
     },
     img: {
@@ -57,6 +58,7 @@ function styles() {
 
 function script() {
     return gulp.src(paths.script.src)
+        .pipe(concat('script.js'))
         .pipe(babel({
             presets: ['env']
         }))
