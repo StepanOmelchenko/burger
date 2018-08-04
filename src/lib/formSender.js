@@ -2,6 +2,7 @@
 const formSectionOne = document.querySelector('#form-sectionone');
 const formTextarea = document.querySelector('#form-textarea');
 const orderForm = document.querySelector('#order-form');
+const orderSection = document.querySelector('#order-section');
 
 var orderOverlay = document.createElement('div');
     orderOverlay.innerHTML = document.querySelector('#order-overlay').innerHTML;
@@ -11,14 +12,16 @@ var orderCloseBtn = orderOverlay.querySelector('#order-close-btn');
 
 formTextarea.addEventListener('focus', (e) => {
   let orderFormParams = orderForm.getBoundingClientRect();
-
+  
   if (orderFormParams.width <= 480) {
     formSectionOne.classList.add('form__column--hide');
+    orderSection.classList.add('seventh--textarea');
   }
 });
 
 formTextarea.addEventListener('focusout', (e) => {
   formSectionOne.classList.remove('form__column--hide');
+  orderSection.classList.remove('seventh--textarea');
 });
 
 orderCloseBtn.addEventListener('click', (e) => {
